@@ -12,6 +12,11 @@ get '/vets/new' do
   erb(:"vets/new")
 end
 
+post '/vets' do
+  Vet.new(params).save()
+  erb(:"vets/index")
+end
+
 get '/vets/:id' do
   @vet = Vet.find(params['id'].to_i)
   erb(:"vets/show")
