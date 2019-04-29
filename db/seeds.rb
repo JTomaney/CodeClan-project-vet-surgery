@@ -17,5 +17,7 @@ pet1 = Pet.new({'name' => 'Indi',
   'vet_id' => vet1.id()})
 pet1.save()
 
+
+
 binding.pry()
 nil
