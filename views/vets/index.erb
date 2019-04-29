@@ -1,1 +1,5 @@
-<p><%= @vets %></p>
+<h2>Vetinarians</h2>
+<% @vets.each do |vet| %>
+<p><a href="/vets/<%= vet.id %>"><%= vet.name %></a></p>
+<% end %>
+<p><a href="/vets/new">Add Vet</a></p>
