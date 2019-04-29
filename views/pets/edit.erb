@@ -1,0 +1,21 @@
+<form action="/pets/<%= @pet.id %>" method="post">
+
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name" value="<%= @pet.name() %>">
+
+  <label for="date-of-birth">D.o.B</label>
+  <input type="text" name="date_of_birth" id="date-of-birth" value="<%= @pet.date_of_birth() %>">
+
+  <label for="species">Species</label>
+  <input type="text" name="species" id="species" value="<%= @pet.species() %>">
+
+  <label for="owner-contact-info">Owner's contact info</label>
+  <input type="text" name="owner_contact_info" id="owner-contact-info" value="<%= @pet.owner_contact_info() %>">
+
+  <label for="treatment-notes">Treatment notes</label>
+  <input type="text" name="treatment_notes" id="treatment-notes" value="<%= @pet.treatment_notes() %>">
+
+
+  <input type="submit"  value="Update">
+
+</form>

@@ -44,7 +44,10 @@ class Pet
   end
 
   def self.find(id)
-
+    sql = 'SELECT * FROM pets WHERE id = $1;'
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Pet.new(results.first)
   end
 
   def self.all()

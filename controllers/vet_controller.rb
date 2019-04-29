@@ -30,7 +30,7 @@ end
 post '/vets/:id' do
   vet = Vet.new(params)
   vet.update()
-  redirect to :'vets/index'
+  redirect to '/vets'
 end
 
 post '/vets/:id/delete' do

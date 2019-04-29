@@ -1,0 +1,4 @@
+<h1><%= @pet.name %></h1>
+<form  action="/pets/<%= @pet.id %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
