@@ -15,6 +15,22 @@
   <label for="treatment-notes">Treatment notes</label>
   <input type="text" name="treatment_notes" id="treatment-notes" value="<%= @pet.treatment_notes() %>">
 
+  <label for="vet-id">Vet</label>
+  <select name="vet_id" id="vet-id">
+      <% @vets.each do |vet| %>
+        <% if vet.id == @pet.vet_id %>
+          <option value=<%= vet.id %> selected><%= vet.name %></option>
+        <% else %>
+          <option value=<%= vet.id %>><%= vet.name %></option>
+        <% end %>
+        <% if @pet.vet_id == nil %>
+          <option value="" selected>none</option>
+        <% else %>
+          <option value="">none</option>
+        <% end %>
+      <% end %>
+  </select>
+
 
   <input type="submit"  value="Update">
 

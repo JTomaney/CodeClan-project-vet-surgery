@@ -6,6 +6,7 @@ class Pet
   attr_accessor :name, :date_of_birth, :species, :owner_contact_info, :treatment_notes, :vet_id
 
   def initialize(options)
+    options['vet_id'] = false if options['vet_id'] == ""
     @id = options["id"].to_i if options["id"]
     @name = options["name"]
     @date_of_birth = options["date_of_birth"]

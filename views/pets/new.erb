@@ -2,5 +2,25 @@
   <label for="name">Name</label>
   <input type="text" name="name" id="name">
 
-  <input type="submit" value="Register Pet">
+  <label for="date-of-birth">D.o.B</label>
+  <input type="text" name="date_of_birth" id="date-of-birth">
+
+  <label for="species">Species</label>
+  <input type="text" name="species" id="species">
+
+  <label for="owner-contact-info">Owner's contact info</label>
+  <input type="text" name="owner_contact_info" id="owner-contact-info">
+
+  <label for="treatment-notes">Treatment notes</label>
+  <input type="text" name="treatment_notes" id="treatment-notes" value="none">
+
+  <label for="vet-id">Vet</label>
+  <select name="vet_id" id="vet-id">
+    <% @vets.each do |vet| %>
+    <option value=<%= vet.id %>><%= vet.name %></option>
+    <% end %>
+    <option value="">none</option>
+  </select>
+
+  <input type="submit"  value="Register">
 </form>
