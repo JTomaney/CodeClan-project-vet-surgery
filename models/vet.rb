@@ -36,7 +36,10 @@ class Vet
   end
 
   def self.find(id)
-
+    sql = 'SELECT * FROM vets WHERE id = $1;'
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Vet.new(results.first)
   end
 
   def self.all()
