@@ -1,9 +1,18 @@
 <h1>Pets</h1>
-<% @pets.each do |pet| %>
-<a href="/pets/<%= pet.id %>">
-  <p>Name: <%= pet.name %></p>
-  <p>Species: <%= pet.species %></p>
-  <p>Owner: <%= pet.owner_contact_info %></p>
-</a>
-<% end %>
+<table class="center">
+  <tr>
+    <th>Name</th>
+    <th>Species</th>
+    <th>Owner</th>
+  </tr>
+  <% @pets.each do |pet| %>
+  <tr>
+
+    <th><a href="/pets/<%= pet.id %>"><%= pet.name %></a></th>
+    <th><%= pet.species %></th>
+    <th><%= pet.owner_contact_info %></th>
+
+  </tr>
+  <% end %>
+</table>
 <p><a href="/pets/new">Add Pet</a></p>
