@@ -32,7 +32,10 @@ class Vet
   end
 
   def pets()
-
+    sql = 'SELECT * FROM pets WHERE vet_id = $1'
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |result| Pet.new(result) }
   end
 
   def self.find(id)

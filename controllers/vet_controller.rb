@@ -8,6 +8,10 @@ get '/vets' do
   erb(:"vets/index")
 end
 
+get '/vets/new' do
+  erb(:"vets/new")
+end
+
 get '/vets/:id' do
   @vet = Vet.find(params['id'].to_i)
   erb(:"vets/show")
