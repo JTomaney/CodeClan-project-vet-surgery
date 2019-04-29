@@ -19,6 +19,7 @@ end
 # show
 get '/vets/:id' do
   @vet = Vet.find(params['id'].to_i)
+  @pets = @vet.pets()
   erb(:"vets/show")
 end
 # edit

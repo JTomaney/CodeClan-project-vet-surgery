@@ -1,6 +1,10 @@
 <h1><%= @vet.name %></h1>
-<p><a href="/vets/<%= @vet.id %>/edit">Edit details</a></p>
+<h5>Primary Vet for:</h5>
+<% @pets.each do |pet| %>
+<p><a href="/pets/<%= pet.id %>"><%= pet.name %></a></p>
+<% end %>
+<footer><a href="/vets/<%= @vet.id %>/edit">Edit details</a>
 <form action="/vets/<%= @vet.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>
-<footer><a href="/vets">Back</a></footer>
+<a href="/vets">All Vets</a></footer>
