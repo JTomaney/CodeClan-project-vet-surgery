@@ -1,6 +1,6 @@
 <form action="/vets/<%= @vet.id %>" method="post">
   <label for="name">Name</label>
-  <input type="text" name="name" id="name" value="<%= @vet.name() %>">
+  <input type="text" name="name" id="name" value="<%= @vet.name() %>" required>
 
   <input type="submit" value="Update">
 </form>

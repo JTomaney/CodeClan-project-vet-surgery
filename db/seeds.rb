@@ -3,6 +3,7 @@ require_relative('../models/vet.rb')
 require_relative('../models/pet.rb')
 
 Vet.delete_all()
+Pet.delete_all()
 
 vet1 = Vet.new({'name' => 'Dr. Jones'})
 vet1.save()
