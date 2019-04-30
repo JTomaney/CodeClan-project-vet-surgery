@@ -28,7 +28,7 @@ CREATE TABLE pets (
 CREATE TABLE visits (
   id SERIAL8 PRIMARY KEY,
   pet_id INT8 REFERENCES pets(id) ON DELETE CASCADE,
-  vet_id INT8 REFERENCES vets(id) ON DELETE CASCADE,
+  vet_id INT8 REFERENCES vets(id) ON DELETE SET NULL,
   treatment_notes VARCHAR(510),
   intake_date VARCHAR(255),
   discharge_date VARCHAR(255)

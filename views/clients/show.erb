@@ -1,5 +1,16 @@
 <h1><%= @client.full_name %></h1>
-<p>pets</p>
+<p>Details</p>
+<table class="center">
+  <tr>
+    <th>Contact Number</th>
+    <th>Email</th>
+  </tr>
+  <tr>
+    <td><%= @client.contact_number %></td>
+    <td><%= @client.email %></td>
+  </tr>
+</table>
+<p>Pets</p>
 <table class="center">
   <tr>
     <th>Name</th>

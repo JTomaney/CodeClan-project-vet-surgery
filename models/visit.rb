@@ -11,7 +11,7 @@ class Visit
     @vet_id = options['vet_id']
     @treatment_notes = options['treatment_notes']
     @intake_date = options['intake_date']
-    @discharge_date = options['intake_date']
+    @discharge_date = options['discharge_date']
   end
 
   def save()

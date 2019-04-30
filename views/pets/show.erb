@@ -1,7 +1,14 @@
 <h1><%= @pet.name %></h1>
 <p>D.o.B: <%= @pet.date_of_birth %></p>
 <p>Species: <%= @pet.species %></p>
-<p>Primary Vet: <a href="/vets/<%= @pet.vet_id %>"><%= @pet.vet.name %></a></p>
+<p>Primary Vet:
+  <% if @pet.vet_id.is_a?(Integer) %>
+  <a href="/vets/<%= @pet.vet_id %>"><%= @pet.vet.name %></a>
+  <% else %>
+  none
+  <% end %></p>
+
+
 <h3>Consultations</h3>
 <table class='center'>
   <tr>
@@ -10,7 +17,7 @@
   </tr>
   <% @visits.each do |visit| %>
   <tr>
-    <td><%= Vet.find(visit.vet_id).name %>
+    <td><%= Vet.find(visit.vet_id).name if @pet.vet_id.is_a?(Integer) %>
     </td>
     <td><a href="/visits/<%= visit.id %>"><%= visit.discharge_date %></a>
     </td>
