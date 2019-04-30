@@ -1,3 +1,4 @@
+DROP TABLE visits;
 DROP TABLE pets;
 DROP TABLE vets;
 DROP TABLE clients;
@@ -21,6 +22,14 @@ CREATE TABLE pets (
   client_id INT8 REFERENCES clients(id) ON DELETE CASCADE,
   name VARCHAR(255),
   date_of_birth VARCHAR(255),
-  species VARCHAR(255),
-  treatment_notes VARCHAR(510)
+  species VARCHAR(255)
+);
+
+CREATE TABLE visits (
+  id SERIAL8 PRIMARY KEY,
+  pet_id INT8 REFERENCES pets(id) ON DELETE CASCADE,
+  vet_id INT8 REFERENCES vets(id) ON DELETE CASCADE,
+  treatment_notes VARCHAR(510),
+  intake_date VARCHAR(255),
+  discharge_date VARCHAR(255)
 );
