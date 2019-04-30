@@ -1,7 +1,6 @@
 <h1><%= @pet.name %></h1>
 <p>D.o.B: <%= @pet.date_of_birth %></p>
 <p>Species: <%= @pet.species %></p>
-<p>Owner's contact info: <%= @pet.owner_contact_info %></p>
 <p>Treatment: <%= @pet.treatment_notes %></p>
 <p>Primary Vet: <a href="/vets/<%= @pet.vet_id %>"><%= @pet.vet.name %></a></p>
 <p><a href="/pets/<%= @pet.id %>/edit">Edit details</a></p>

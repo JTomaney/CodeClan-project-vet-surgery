@@ -10,6 +10,7 @@ end
 #new
 get '/pets/new' do
   @vets = Vet.all()
+  @clients = Client.all()
   erb(:"pets/new")
 end
 #create
@@ -26,6 +27,7 @@ end
 get '/pets/:id/edit' do
   @pet = Pet.find(params['id'].to_i)
   @vets = Vet.all()
+  @clients = Client.all()
   erb(:"pets/edit")
 end
 #update

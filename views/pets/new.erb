@@ -1,4 +1,12 @@
 <form action="/pets" method="post">
+
+  <label for="client-id">Client</label>
+  <select name="client_id" id="client-id">
+    <% @clients.each do |client| %>
+    <option value=<%= client.id %>><%= client.full_name %></option>
+    <% end %>
+  </select>
+
   <label for="name">Name</label>
   <input type="text" name="name" id="name" required>
 
@@ -7,9 +15,6 @@
 
   <label for="species">Species</label>
   <input type="text" name="species" id="species" required>
-
-  <label for="owner-contact-info">Owner's contact info</label>
-  <input type="text" name="owner_contact_info" id="owner-contact-info" required>
 
   <label for="treatment-notes">Treatment notes</label>
   <input type="text" name="treatment_notes" id="treatment-notes" value="none" required>
