@@ -21,6 +21,7 @@ end
 #show
 get '/pets/:id' do
   @pet = Pet.find(params['id'].to_i)
+  @visits = @pet.visits()
   erb(:"pets/show")
 end
 #edit

@@ -1,8 +1,23 @@
 <h1><%= @pet.name %></h1>
 <p>D.o.B: <%= @pet.date_of_birth %></p>
 <p>Species: <%= @pet.species %></p>
-<p>Treatment: <%= @pet.treatment_notes %></p>
 <p>Primary Vet: <a href="/vets/<%= @pet.vet_id %>"><%= @pet.vet.name %></a></p>
+<h3>Consultations</h3>
+<table class='center'>
+  <tr>
+    <th>Vet</th>
+    <th>Discharge date</th>
+  </tr>
+  <% @visits.each do |visit| %>
+  <tr>
+    <td><%= Vet.find(visit.vet_id).name %>
+    </td>
+    <td><a href="/visits/<%= visit.id %>"><%= visit.discharge_date %></a>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<p><a href="/visits/new">Record New Consultation</a></p>
 <p><a href="/pets/<%= @pet.id %>/edit">Edit details</a></p>
 <form action="/pets/<%= @pet.id %>/delete" method="post">
   <input type="submit" value="Delete">

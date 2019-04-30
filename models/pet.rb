@@ -50,6 +50,13 @@ class Pet
     return Client.new(results[0])
   end
 
+  def visits()
+    sql = 'SELECT * FROM visits WHERE pet_id = $1'
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |result| Visit.new(result)  } 
+  end
+
   def self.find(id)
     sql = 'SELECT * FROM pets WHERE id = $1;'
     values = [id]

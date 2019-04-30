@@ -19,7 +19,8 @@ end
 # show
 get '/visits/:id' do
   @visit = Visit.find(params['id'].to_i)
-  # @pets = @vet.pets()
+  @pet = Pet.find(@visit.pet_id)
+  @Vet = Vet.find(@visit.vet_id)
   erb(:"visits/show")
 end
 # edit

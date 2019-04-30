@@ -1,10 +1,16 @@
-<h1><%= @vet.name %></h1>
-<h5>Primary Vet for:</h5>
-<% @pets.each do |pet| %>
-<p><a href="/pets/<%= pet.id %>"><%= pet.name %></a></p>
-<% end %>
-<footer><a href="/vets/<%= @vet.id %>/edit">Edit details</a>
-<form action="/vets/<%= @vet.id %>/delete" method="post">
-  <input type="submit" value="Delete">
-</form>
-<a href="/vets">All Vets</a></footer>
+<h1><%= @visit.discharge_date %></h1>
+<table class='center'>
+  <tr>
+    <th>Name</th>
+    <th>Intake Date</th>
+    <th>Discharge Date</th>
+  </tr>
+  <tr>
+    <td><%= @pet.name %></td>
+    <td><%= @visit.intake_date %></td>
+    <td><%= @visit.discharge_date %></td>
+  </tr>
+  <p><%= @visit.treatment_notes %></p>
+</table>
+
+<footer><a href="/pets/<%= @pet.id %>"> Back</a></footer>
