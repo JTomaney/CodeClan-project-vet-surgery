@@ -11,7 +11,6 @@ class PetTest < MiniTest::Test
       'date_of_birth' => '22/02/1994',
       'species' => 'cat',
       'owner_contact_info' => 'Jon, 07734975635',
-      'treatment_notes' => 'prescribed worming/flea tablets',
       'vet_id' => vet1.id()})
     assert_equal('Indi', pet1.name())
   end

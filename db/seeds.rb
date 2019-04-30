@@ -2,7 +2,9 @@ require('pry')
 require_relative('../models/vet.rb')
 require_relative('../models/pet.rb')
 require_relative('../models/client.rb')
+require_relative('../models/visit.rb')
 
+Visit.delete_all()
 Client.delete_all()
 Vet.delete_all()
 Pet.delete_all()
@@ -60,8 +62,16 @@ pet4 = Pet.new({'name' => 'Muncher',
   'vet_id' => vet3.id()})
 pet4.save()
 
+visit1 = Visit.new({'pet_id' => pet1.id,
+                   'vet_id' => vet1.id,
+                   'treatment_notes' => 'notes',
+                   'intake_date' => '12/12/12',
+                   'discharge_date' => '15/12/12'
+                  })
+visit1.save()                  
 
 
 
-binding.pry()
-nil
+
+# binding.pry()
+# nil
