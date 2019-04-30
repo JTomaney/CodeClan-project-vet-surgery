@@ -9,7 +9,6 @@ get '/clients' do
 end
 #new
 get '/clients/new' do
-  @clients = Client.all()
   erb(:"clients/new")
 end
 #create
@@ -37,7 +36,7 @@ post '/clients/:id' do
 end
 #delete
 post '/clients/:id/delete' do
-  client = Clientet.find(params['id'].to_i)
+  client = Client.find(params['id'].to_i)
   client.delete()
   redirect to '/clients'
 end

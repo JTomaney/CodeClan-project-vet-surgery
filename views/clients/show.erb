@@ -11,4 +11,10 @@
 
   </tr>
   <% end %>
+  </table>
   <br>
+  <p><a href="/clients/<%= @client.id %>/edit">Edit details</a></p>
+  <form action="/clients/<%= @client.id %>/delete" method="post">
+    <input type="submit" value="Delete">
+  </form>
+  <p><a href="/clients">All Clients</a></p>

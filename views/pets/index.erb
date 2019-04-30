@@ -10,7 +10,7 @@
 
     <td><a href="/pets/<%= pet.id %>"><%= pet.name %></a></td>
     <td><%= pet.species %></td>
-    <td><%= pet.client.full_name %></td>
+    <td><a href="/clients/<%= pet.client_id %>"><%= pet.client.full_name %></a></td>
 
   </tr>
   <% end %>

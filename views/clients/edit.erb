@@ -1,36 +1,18 @@
-<form action="/pets/<%= @pet.id %>" method="post">
+<form action="/clients/<%= @client.id %>" method="post">
 
-  <label for="name">Name</label>
-  <input type="text" name="name" id="name" value="<%= @pet.name() %>" required>
+  <label for="first-name">First Name</label>
+  <input type="text" name="first_name" id="first-name" value="<%= @client.first_name %>" required>
 
-  <label for="date-of-birth">D.o.B</label>
-  <input type="text" name="date_of_birth" id="date-of-birth" value="<%= @pet.date_of_birth() %>" required>
+  <label for="last-name">Last Name</label>
+  <input type="text" name="last_name" id="last-name" value="<%= @client.last_name %>" required>
 
-  <label for="species">Species</label>
-  <input type="text" name="species" id="species" value="<%= @pet.species() %>" required>
+  <label for="contact-number">Contact Number</label>
+  <input type="text" name="contact_number" id="contact-number" value="<%= @client.contact_number %>" required>
 
-  <label for="treatment-notes">Treatment notes</label>
-  <input type="text" name="treatment_notes" id="treatment-notes" value="<%= @pet.treatment_notes() %>" required>
+  <label for="email">Email Address</label>
+  <input type="text" name="email" id="email" value="<%= @client.email %>" required>
 
-  <label for="vet-id">Vet</label>
-  <select name="vet_id" id="vet-id">
-      <% @vets.each do |vet| %>
-        <% if vet.id == @pet.vet_id %>
-          <option value=<%= vet.id %> selected><%= vet.name %></option>
-        <% else %>
-          <option value=<%= vet.id %>><%= vet.name %></option>
-        <% end %>
-        <% if @pet.vet_id == nil %>
-          <option value="" selected>none</option>
-        <% else %>
-          <option value="">none</option>
-        <% end %>
-      <% end %>
-  </select>
-
-
-  <input type="submit"  value="Update">
-
+  <input type="submit"  value="Register">
 </form>
 
-<footer><a href="/pets/<%= @pet.id %>">Back</a></footer>
+<p><a href="/pets">Back</a></p>
