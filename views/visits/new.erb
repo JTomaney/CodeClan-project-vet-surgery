@@ -1,7 +1,22 @@
 <form action="/visits" method="post">
-  <label for="name">Name</label>
-  <input type="text" name="name" id="name" required>
-
+  <label for="pet-id">Pet</label>
+  <select class="pet-id" name="pet_id">
+    <% @pets.each do |pet| %>
+    <option value='<%= pet.id %>'><%= pet.name %></option>
+    <% end %>
+  </select>
+  <label for="vet-id">Vet</label>
+  <select class="vet-id" name="vet_id">
+    <% @vets.each do |vet| %>
+    <option value='<%= vet.id %>'><%= vet.name %></option>
+    <% end %>
+  </select>
+  <label for="intake-date">Intake Date</label>
+  <input type="text" name="intake_date" id="intake-date" required>
+  <label for="discharge-date">Discharge Date</label>
+  <input type="text" name="discharge_date" id="discharge-date" required>
+  <label for="treatment-notes">Treatment Notes</label>
+  <input type="text" name="treatment_notes" id="treatment-notes">
   <input type="submit" value="Record Consultation">
-</form>
-<footer><a href="/vets">Back</a></footer>
+  </form>
+  <footer><a href="/visits">All Consultations</a></footer>

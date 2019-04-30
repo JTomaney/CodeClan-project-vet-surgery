@@ -9,12 +9,15 @@ get '/visits' do
 end
 # new
 get '/visits/new' do
+  @pets = Pet.all()
+  @vets = Vet.all()
   erb(:"visits/new")
 end
 # create
 post '/visits' do
-  Visit.new(params).save()
-  redirect to '/visits'
+  visit = Visit.new(params)
+  visit.save()
+  redirect to '/pets'
 end
 # show
 get '/visits/:id' do
