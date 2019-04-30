@@ -42,7 +42,7 @@ class Client
     sql = 'SELECT * FROM pets WHERE client_id = $1'
     values = [@id]
     results = SqlRunner.run(sql, values)
-    return Pet.new(results[0])
+    return results.map { |result| Pet.new(result) }
   end
 
   def self.find(id)

@@ -1,0 +1,14 @@
+<h1><%= @client.full_name %></h1>
+<p>pets</p>
+<table class="center">
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @pets.each do |pet| %>
+  <tr>
+
+    <td><a href="/pets/<%= pet.id %>"><%= pet.name %></a></td>
+
+  </tr>
+  <% end %>
+  <br>
