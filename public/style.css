@@ -1,6 +1,7 @@
 body {
   background-color: grey;
   text-align: center;
+  font-family: sans-serif;
 }
 
 nav {
@@ -36,13 +37,18 @@ table.center {
   margin-right:auto;
   border: 1px solid black;
   border-collapse: collapse;
+  background-color: white;
+  padding: 5px;
 }
 
 th {
   text-align: left;
   border: 1px solid black;
+  padding: 30px 90px;
 }
 
 td {
   border: 1px solid black;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
