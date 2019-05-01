@@ -5,6 +5,7 @@ also_reload('../models/*')
 
 # new
 get '/visits/new' do
+  @pet = Pet.find(params["pet-id"])
   @pets = Pet.all()
   @vets = Vet.all()
   erb(:"visits/new")

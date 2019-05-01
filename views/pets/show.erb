@@ -24,7 +24,7 @@
   </tr>
   <% end %>
 </table>
-<p><a href="/visits/new">Record New Consultation</a></p>
+<p><a href="/visits/new?pet-id=<%= @pet.id %>">Record New Consultation</a></p>
 <p><a href="/pets/<%= @pet.id %>/edit">Edit details</a></p>
 <form action="/pets/<%= @pet.id %>/delete" method="post">
   <input type="submit" value="Delete">
