@@ -4,13 +4,10 @@
   <input type="text" name="name" id="name" value="<%= @pet.name() %>" required>
 
   <label for="date-of-birth">D.o.B</label>
-  <input type="text" name="date_of_birth" id="date-of-birth" value="<%= @pet.date_of_birth() %>" required>
+  <input type="date" name="date_of_birth" id="date-of-birth" value="<%= @pet.date_of_birth() %>" required>
 
   <label for="species">Species</label>
   <input type="text" name="species" id="species" value="<%= @pet.species() %>" required>
-
-  <label for="treatment-notes">Treatment notes</label>
-  <input type="text" name="treatment_notes" id="treatment-notes" value="<%= @pet.treatment_notes() %>" required>
 
   <label for="vet-id">Vet</label>
   <select name="vet_id" id="vet-id">

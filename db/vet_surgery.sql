@@ -21,7 +21,7 @@ CREATE TABLE pets (
   vet_id INT8 REFERENCES vets(id) ON DELETE SET NULL,
   client_id INT8 REFERENCES clients(id) ON DELETE CASCADE,
   name VARCHAR(255),
-  date_of_birth VARCHAR(255),
+  date_of_birth DATE,
   species VARCHAR(255)
 );
 
@@ -30,6 +30,6 @@ CREATE TABLE visits (
   pet_id INT8 REFERENCES pets(id) ON DELETE CASCADE,
   vet_id INT8 REFERENCES vets(id) ON DELETE SET NULL,
   treatment_notes VARCHAR(510),
-  intake_date VARCHAR(255),
-  discharge_date VARCHAR(255)
+  intake_date DATE,
+  discharge_date DATE
 );
