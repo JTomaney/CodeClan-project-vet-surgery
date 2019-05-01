@@ -17,8 +17,8 @@ class Pet
 
   def save()
     sql = 'INSERT INTO pets
-      (name, date_of_birth, species, client_id, vet_id) VALUES ($1, $2, $3, $4, $5)
-      RETURNING id;'
+    (name, date_of_birth, species, client_id, vet_id) VALUES ($1, $2, $3, $4, $5)
+    RETURNING id;'
     values = [@name, @date_of_birth, @species, @client_id,  @vet_id]
     results = SqlRunner.run(sql, values)
     @id = results[0]['id'].to_i
@@ -54,7 +54,7 @@ class Pet
     sql = 'SELECT * FROM visits WHERE pet_id = $1'
     values = [@id]
     results = SqlRunner.run(sql, values)
-    return results.map { |result| Visit.new(result)  } 
+    return results.map { |result| Visit.new(result)  }
   end
 
   def self.find(id)
