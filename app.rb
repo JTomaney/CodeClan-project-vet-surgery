@@ -1,8 +1,8 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require_relative('controllers/pet_controller.rb')
-require_relative('controllers/vet_controller.rb')
-require_relative('controllers/client_controller.rb')
+require_relative('controllers/pets_controller.rb')
+require_relative('controllers/vets_controller.rb')
+require_relative('controllers/clients_controller.rb')
 require_relative('controllers/visits_controller.rb')
 
 get '/' do
